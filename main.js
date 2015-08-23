@@ -94,8 +94,10 @@ window.setInterval(function () {
     document.getElementById("contracts").innerHTML = contracts;
     document.getElementById("contractsPerSecond").innerHTML = contractsPerSecond;
 
-	var upgrade1DataPerSecond = 0;
-	var dataPerSecond = upgrade1DataPerSecond;
+	var dataPerSecond = 0
+    if (dataGeneration1UpgradeBought === 1) {
+        dataPerSecond += 1;
+	}
     data = data + dataPerSecond;
     document.getElementById('data').innerHTML = data;
     document.getElementById('dataPerSecond').innerHTML = dataPerSecond;
@@ -116,9 +118,7 @@ I've also made this tally up max amounts of buildings (where applicable), and th
 	if (locator !== locatorMax) {
 		document.getElementById('buyLocatorDisable').disabled = false;
 	}
-    if (dataGeneration1UpgradeBought === 1) {
-        upgrade1DataPerSecond = 1;
-    }
+
     
 }, 1000);
 
