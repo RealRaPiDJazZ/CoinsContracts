@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<link rel="stylesheet" type="text/css" href="interface.css" />
+     <title>Coins/Contracts</title>
+	</head>
+	<body>
+	    <table style="width:100%">
+  <tr>
+    <td><h1>Status</h1></td>
+    <td><h1>Buildings</h1></td>		
+    <td><h1>Upgrades</h1></td>
+  </tr>
+  <tr>
+    <td><button onclick="coinClick(1)">Click Me!</button>
+	<br><br>
+	<button onclick="buyTradeContracts()">Trade Coins for Contracts</button>
+		<br>
+		Trade Coins Cost: <span id="buyTradeContractsCost">50</span>
+		<br>
+		Amount of Trades Made: <span id="tradeContracts">0</span>
+		<br>
+		Projected Reward: <span id="projectedContractsGiven">1</span> contract(s)
+	</td>
+    <td><button onclick="buyLocator()" button id="buyLocatorDisable">Buy Spare Change Locator</button>
+		<br>
+		Spare Change Locator: <span id="locator">0</span>
+		<br>
+		Spare Change Locator Cost: <span id="locatorCost">5</span> coins
+		<br>
+		Spare Change Locator Effects: Gives <span id="locatorCoinPerClick">1</span> coin/click
+		<br>
+		Max Amount of building: <span id="locatorMax">50</span>
+		<br><br></td>		
+    <td><button onclick="buyWelcomeUpgrade()" button id="buyWelcomeUpgrade">Welcome to an Incremental! </button>
+		<br>
+		Upgrade Effects: Adds 3 coins/click
+		<br>
+		Upgrade Cost: 10 coins
+		<br><br></td>
+  </tr>
+  <tr>
+    <td><h3>Coins: <span id="coins">0</h3></span></td>
+    <td><button onclick="buyStealer()" button id="buyStealer" disabled>Buy Coin Flip Stealer</button>
+		<br>
+		Coin Flip Stealer: <span id="stealer">0</span>
+		<br>
+		Coin Flip Stealer Cost: <span id="stealerCost">200</span> coins
+		<br>
+		Coin Flip Stealer Effects: Gives 10 coins/second
+		<br><br></td>		
+    <td><button onclick="buyContractBeginningUpgrade()" button id="buyContractBeginningUpgrade">The beginning of contracts.</button>
+		<br>
+		Upgrade Effects: Adds 2 coins/click, 2 coins/second
+		<br>
+		Upgrade Cost: 1 contract
+		<br><br></td>
+  </tr>
+    <tr>
+    <td><h3>Contracts: <span id="contracts">0</h3></td>		
+    <td><button onclick="buyBucket()">Buy Donation Bucket</button>
+		<br>
+		Donation Bucket: <span id="bucket">0</span>
+		<br>
+		Donation Bucket Cost: <span id="bucketCost">200</span> coins
+		<br>
+		Donation Bucket Effects: Gives 5 coins/click
+		<br><br></td>
+	<td><button onclick="buyFreeContract1Upgrade()" button id="buyFreeContract1Upgrade" disabled >Free contracts!</button>
+		<br>
+		Upgrade Effects: Gives 9 contracts!
+		<br>
+		Upgrade Cost: 1 contract
+		<br><br></td>
+  </tr>  
+  <tr>
+    <td><h3>Data: <span id="data">0</h3></span></td>
+    <td><button onclick="buyIntern()" button id="buyIntern" disabled>Buy Paid Intern</button>
+		<br>
+		Paid Intern: <span id="intern">0</span>
+		<br>
+		Paid Intern Cost: <span id="internCost">10</span> contracts
+		<br>
+		Paid Intern Effects: Gives 1 contract/second and 1 coin/second
+		<br><br></td>		
+    <td><button onclick="buyCoinFlipStealerUpgrade1()" button id="buyCoinFlipStealerUpgrade1">Better Stealers! </button>
+		<br>
+		Upgrade Effects: Makes coin stealer give 25 coins/second
+		<br>
+		Upgrade Cost: 3000 coins
+		<br><br></td>
+  </tr>
+    <tr>
+    <td><h3>Coins/Click: <span id="coinPerClick">1</h3></span></td>
+    <td><button onclick="buySlacker()">Buy Professional Slacker</button>
+	    <br>
+	    Professional Slacker: <span id="slacker">0</span>
+		<br>
+		Professional Slacker Cost: <span id="slackerCost">20</span> contracts
+		<br>
+		Professional Slacker Effects: Gives 3 contracts/second 
+		<br><br></td>		
+    <td><button onclick="buyInternOutsourcing1Upgrade()" button id="buyInternOutsourcing1Upgrade">Outsource your interns!</button>
+		<br>
+		Upgrade Effects: Gives a 2.5% bonus to Coin/Click for each intern you have.
+		<br>
+		Upgrade Cost: 150 contracts
+		<br><br></td>
+  </tr>
+    <tr>
+    <td><h3>Coins/Second: <span id="coinsPerSecond">0</h3></span></td>
+    <td><button onclick="buyJanitor()">Buy Apprentice Janitor</button>
+		<br>
+		Apprentice Janitor: <span id="janitor">0</span>
+		<br>
+		Apprentice Janitor Cost: <span id="janitorCost">100</span> contracts
+		<br>
+		Apprentice Janitor Effects: Gives 5 contracts/second
+		<br><br></td>		
+    <td><button onclick="buyDataGeneration1Upgrade()" button id="buyDataGeneration1Upgrade">Generate data automatically from.. stuff!!</button>
+		<br>
+		Upgrade Effects: Gives 1 data/second
+		<br>
+		Upgrade Cost: 1000 coins
+		<br><br></td>
+  </tr>
+      <tr>
+    <td><h3>Contracts/Second: <span id="contractsPerSecond">0</h3></span></td>
+    <td><button onclick="buyTollbooth()">Buy Portable Tollbooth</button>
+		<br>
+		Portable Tollbooth: <span id="tollbooth">0</span>
+		<br>
+		Portable Tollbooth Cost: <span id="tollboothCostCoins">5000</span> coins and <span id="tollboothCostContracts">50</span> contracts
+		<br>
+		Portable Tollbooth Effects: Gives 150 coins/second and 10 contracts/second
+		<br><br></td>		
+    <td><button onclick="buyDataUtility1Upgrade()" button id="buyDataUtility1Upgrade" disabled>Makes data more useful!</button>
+		<br>
+		Upgrade Effects: Makes data give 1 coin/click and 1 contract/second
+		<br>
+		Upgrade Cost: 1000 contracts
+		<br><br></td>
+  </tr>
+        <tr>
+    <td><h3>Data/Second: <span id="dataPerSecond">0</h3></span></td>
+    <td></td>		
+    <td></td>
+  </tr>
+</table>
+
+		<script type="text/javascript" src="main.js"></script>
+		<br>
+	</body>
+</html>
